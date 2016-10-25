@@ -1,5 +1,8 @@
-<!-- html tag to comment out --> 
-<%= form_for(@artist) do |f| %>
+
+<!-- underscore before form means that it's a helperfile -->
+<!-- this helperfile is being calld by new.html.erb and edit.html.erb -->
+
+<%= form_for(@artist) do |f| %> <!--pass in the instance variable @artist--> 
   <% if @artist.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@artist.errors.count, "error") %> prohibited this artist from being saved:</h2>
@@ -12,7 +15,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field"> <!--text field -->
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -20,6 +23,10 @@
     <%= f.label :record_label %><br>
     <%= f.text_field :record_label %>
   </div>
+  <div class="field">
+    <%= f.label :instrument %><br>
+    <%= f.text_field :instrument %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

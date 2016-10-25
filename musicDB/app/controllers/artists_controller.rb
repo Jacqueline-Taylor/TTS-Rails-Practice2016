@@ -1,19 +1,19 @@
-class ArtistsController < ApplicationController
+class ArtistsController < ApplicationController #artist controller inherets everything from applciation controller
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
 
   # GET /artists
   # GET /artists.json
-  def index
+  def index #**lists all of our artists**
     @artists = Artist.all
   end
 
   # GET /artists/1
   # GET /artists/1.json
-  def show
+  def show # ** whenever we clicked on the drink it gave us more details on the drink ** 
   end
 
   # GET /artists/new
-  def new
+  def new #page for add a new artist - loads a form 
     @artist = Artist.new
   end
 
@@ -69,6 +69,6 @@ class ArtistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
-      params.require(:artist).permit(:name, :record_label)
+      params.require(:artist).permit(:name, :record_label, :instrument)
     end
 end
